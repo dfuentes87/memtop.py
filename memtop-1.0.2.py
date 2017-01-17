@@ -1,14 +1,12 @@
 #!/usr/bin/env python
 
 #Memtop - prints applications that consumes most of RAM
+#Version 1.0.2
 #Tested with python 2.7 and 3.x
-#Contact: tiborb95 at gmail dot com, any comments appreciated
-#version 1.0.1
-#changes since 0.9.0: compatibility with python3, fixed bug causing that 
-# * grepping was not possible due to binary (&invisible) characters in output
-# * added "more" information about swapping and memory+swap use
-# * logging to a file added
-#
+
+#Forked from https://code.google.com/archive/p/memtop/
+#Original Creator: tiborb95 at gmail dot com
+
 #data structures uses:
 #key_pid  - dictionary adjusted_mem:PID
 #pid_omem - dictionary PID:Old Memory
@@ -139,7 +137,7 @@ what applications uses biggest portions of the memory (RAM+swap), sorted in decr
 It lists private/writeable memory only, that is without shared memory. \
 Typical use is when you need to reduce the overall RAM consumption or when you \
 encounter performance problems.")
-	print ("   Version 1.0")
+	print ("   Version 1.0.2")
 	print ("   Memtop gets data from /proc/ virtual filesystem.")
 	print ("   Home: http://code.google.com/p/memtop/ ")
 	print ("")
@@ -152,7 +150,7 @@ how data mainly for previous period are presented.")
 	print (" -L/--log     saves basic data into logfile")
 	print (" -h/--help     ")
 	print ("")
-	print ("   You can contact me at tiborb95 at gmail dot com"+'\033[0m')
+	print ("   You can contact the original creator at tiborb95 at gmail dot com"+'\033[0m')
 	
 
 def getPrivateMem(pid):
